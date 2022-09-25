@@ -30,6 +30,7 @@ while(empHrs<MAX_WORKING_HOURS&&numberOfDays<MAX_WORKING_DAYS)
     numberOfDays++;
     let isPresent=Math.floor(Math.random()*3);
     empHrs+=getWorkingHours(isPresent);
+
 }
 
 console.log("Number of Days "+numberOfDays);

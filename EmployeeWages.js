@@ -4,6 +4,7 @@ const PART_TIME=2;
 const FULL_HOURS=8;
 const PART_HOURS=4;
 const WAGE_PER_HOURS=20;
+const NUMBER_OF_WORKING_DAYS=20;
 
 function getWorkingHours(isPresent)
 {
@@ -21,10 +22,14 @@ default:
     return 0;
 }
 }
-let isPresent=Math.floor(Math.random()*3);
 let empHrs=0;
-empHrs=getWorkingHours(isPresent);
+for(let day=1;day<=20;day++)
+{
+    let isPresent=Math.floor(Math.random()*3);
+    empHrs+=getWorkingHours(isPresent);
+}
+
 let calWage=empHrs*WAGE_PER_HOURS;
-console.log("Employee wage is $"+calWage);
+console.log("Monthly Employee wages is $"+calWage);
 
 

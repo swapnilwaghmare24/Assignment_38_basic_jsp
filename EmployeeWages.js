@@ -4,7 +4,8 @@ const PART_TIME=2;
 const FULL_HOURS=8;
 const PART_HOURS=4;
 const WAGE_PER_HOURS=20;
-const NUMBER_OF_WORKING_DAYS=20;
+const MAX_WORKING_DAYS=20;
+const MAX_WORKING_HOURS=160;
 
 function getWorkingHours(isPresent)
 {
@@ -23,12 +24,16 @@ default:
 }
 }
 let empHrs=0;
-for(let day=1;day<=20;day++)
+let numberOfDays=0;
+while(empHrs<MAX_WORKING_HOURS&&numberOfDays<MAX_WORKING_DAYS)
 {
+    numberOfDays++;
     let isPresent=Math.floor(Math.random()*3);
     empHrs+=getWorkingHours(isPresent);
 }
 
+console.log("Number of Days "+numberOfDays);
+console.log("Number of hours "+empHrs);
 let calWage=empHrs*WAGE_PER_HOURS;
 console.log("Monthly Employee wages is $"+calWage);
 
